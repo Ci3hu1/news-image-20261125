@@ -5,7 +5,7 @@ Visual language: a daylight wire desk - warm paper ground, an ink-black
 masthead band, signal-red rules and number chips, teal accents, linocut
 scenes drawn with heavy black outlines. Deliberately NOT the cream
 newspaper front page the field copies, and NOT the navy night-desk of
-the previous day. All 41 stories were first reported Wed 25 Nov 2026
+the previous day. All 46 stories were first reported Wed 25 Nov 2026
 in some time zone (see BRIEF.md for the verification basis of each
 one). Two 24-Nov stories are named only in the small DATE CHECK box
 as excluded.
@@ -145,18 +145,23 @@ ALSO_ON = [
     (39, "OCEANIA", "Deepest volcanic blast found in Mariana Trench", "RNZ", 145.0, 11.4),
     (40, "GLOBAL", "Star system 'should not exist' found", "SciTechDaily", 0.0, 45.0),
     (41, "GLOBAL", "Child attacks: a third are in Palestine", "Al Jazeera", 35.2, 31.8),
+    (42, "EUROPE", "German GDP +0.1%, revised down", "Destatis", 13.4, 52.5),
+    (43, "MIDDLE EAST", "Houthis claim refinery, Riyadh strikes", "Reuters", 50.2, 26.6),
+    (44, "ASIA", "China probes Politburo member Chen Jining", "Reuters", 116.4, 39.9),
+    (45, "EUROPE", "Puigdemont to return to Spain on Dec 12", "Reuters", 2.17, 41.4),
+    (46, "GLOBAL", "Asian stocks slide on tariff threats", "Reuters", 127.0, 37.5),
 ]
 
-REGION_COUNTS = {"EUROPE": 3, "MIDDLE EAST": 10, "ASIA": 10,
-                 "AFRICA": 2, "AMERICAS": 3, "OCEANIA": 10, "GLOBAL": 3}
-TOTAL_STORIES = 41
+REGION_COUNTS = {"EUROPE": 5, "MIDDLE EAST": 11, "ASIA": 11,
+                 "AFRICA": 2, "AMERICAS": 3, "OCEANIA": 10, "GLOBAL": 4}
+TOTAL_STORIES = 46
 N_REGIONS = 7
 
 TIMELINE = [
     ("00:30 GMT", "Australia CPI 4.9% lands"),
     ("MORNING", "LGBTQ veterans apology"),
     ("MIDDAY", "204 off 53 balls"),
-    ("AFTERNOON", "Sensex \u22121,484"),
+    ("AFTERNOON", "German GDP +0.1%"),
     ("19:45 CET", "Hera's Dimorphos reveal"),
     ("NIGHT", "CIA breach reported"),
 ]
@@ -443,7 +448,7 @@ def render():
     mf = f_display(50)
     mx = (W - mf.getlength(mast)) / 2
     text(d, (mx, 30), mast, mf, CARD)
-    count = "41 STORIES \u00b7 7 REGIONS \u00b7 ALL FROM WEDNESDAY"
+    count = "46 STORIES \u00b7 7 REGIONS \u00b7 ALL FROM WEDNESDAY"
     cf = f_sans_b(17)
     cx = (W - cf.getlength(count)) / 2
     text(d, (cx, 84), count, cf, OCHRE)
@@ -531,7 +536,7 @@ def render():
     # ---- map (648-776)
     d.rectangle([0, 648, W, 776], fill=PAPER)
     mt = "WHERE IT HAPPENED \u2014 STORIES 1\u201313 PINNED  \u00b7  "
-    mt += "DOTS: STORIES 14\u201341"
+    mt += "DOTS: STORIES 14\u201346"
     text(d, (12, 652), mt, f_sans_b(13), RED)
     lx = W - 12
     leg = f_sans(10)
@@ -565,14 +570,14 @@ def render():
     d.line([12, 776, W - 12, 776], fill=INK, width=2)
 
     # ---- ALSO ON list (780-938), 3 columns
-    text(d, (12, 782), "ALSO ON WEDNESDAY \u2014 14\u201341",
+    text(d, (12, 782), "ALSO ON WEDNESDAY \u2014 14\u201346",
          f_sans_b(13), RED)
     af = f_sans(11)
     col_w = (W - 24) / 3
     for i, (n, region, title, src, _lon, _lat) in enumerate(ALSO_ON):
-        col, row = divmod(i, 10)
+        col, row = divmod(i, 11)
         x0 = 12 + col * col_w
-        y = 800 + row * 13
+        y = 800 + row * 12
         line = "%d. %s \u2014 %s" % (n, title, src)
         while af.getlength(line) > col_w - 8 and " " in line:
             line = line.rsplit(" ", 1)[0]

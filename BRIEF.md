@@ -176,3 +176,53 @@ CHECK); US Army lead-azide detonation (planned Wed morning, not yet
 happened at build time); Hera eclipse image itself (published 23 Nov —
 only the 25 Nov evening reveal is in the timeline); Germany GDP / US
 PCE-GDP (due later on 25 Nov, not yet released at build time).
+
+## v2 — daytime edition (built Wed 25 Nov ~18:15–18:45 WIB)
+
+41 → 46 stories. All 41 v1 stories kept unchanged. Five daytime stories
+added, each first reported Wed 25 Nov 2026, verified from a primary
+source (read on the outlet's own page, not from a search snippet):
+
+42. EUROPE/Berlin — "German GDP +0.1%, revised down" — Destatis press
+    release No. 409 of 25 Nov 2026: Q3 GDP +0.1% q/q (price, seasonally
+    and calendar adjusted), +1.2% y/y; 0.1pp lower than the 30 Oct first
+    release (+0.2%). [URL-25: destatis.de]
+43. MIDDLE EAST/Ras Tanura — "Houthis claim refinery, Riyadh strikes" —
+    Houthi spokesman Yahya Saree said on Wednesday the group attacked
+    Ras Tanura refinery (fires) and Riyadh's financial district in three
+    phases; the coalition said air defences intercepted 4 drones in Ras
+    Tanura earlier Wednesday. [URL-25: reuters.com, 25 Nov]
+44. ASIA/Beijing — "China probes Politburo member Chen Jining" —
+    anti-graft watchdog launched an investigation of Shanghai party chief
+    Chen Jining, the fourth such inquiry into the Politburo since 2025.
+    [URL-25: reuters.com, 25 Nov]
+45. EUROPE/Barcelona — "Puigdemont to return to Spain on Dec 12" —
+    Carles Puigdemont said on Wednesday he would return 12 Dec, ending
+    nearly a decade of self-imposed exile after the Supreme Court applied
+    the amnesty law. [URL-25: reuters.com, 25 Nov]
+46. GLOBAL/Seoul — "Asian stocks slide on tariff threats" — Asian stocks
+    tumbled early Wednesday on fresh US tariff threats; MSCI Asia-Pacific
+    ex-Japan -2.3%, South Korea -5.3%, Taiwan -5.1%, Nikkei -2.9%; S&P
+    futures -0.3%. [URL-25: reuters.com, 25 Nov]
+
+Region counts v2: EUROPE 5 · MIDDLE EAST 11 · ASIA 11 · AFRICA 2 ·
+AMERICAS 3 · OCEANIA 10 · GLOBAL 4 = 46 stories, 7 regions.
+
+Layout change: ALSO ON list 3 columns x 11 rows (was 10), row pitch
+13 → 12px; masthead count 41 → 46; map dots 14–46; timeline AFTERNOON
+slot now "German GDP +0.1%" (was Sensex, still story 15). KPIs, DATE
+CHECK, heroes and featured unchanged. Sooryavanshi detail kept
+everywhere. Render: 325,805 bytes, sha256
+6abf4403843052a490e6308dc8a0d3b38549349f35ad2a4a1241305a149442ec,
+byte-deterministic across renders, clearance 0, tests 6/6 pass,
+masthead + 3 leads + KPIs read at 300px.
+
+Deliberately left out (for v3): US PCE + Q3 GDP second estimate (BEA
+releases 8:30 AM ET = 20:30 WIB, not yet out at build time); ESA Hera
+Dimorphos reveal (19:45 CET, not yet happened); Ramaphosa wins Farmgate
+case (Reuters, 25 Nov); Wipro–BP deal (Reuters, 25 Nov); Spain election
+housing debate (Reuters, 25 Nov); Jordan death sentence (Reuters,
+25 Nov); Thanksgiving travel delays (Reuters, 25 Nov); Sahel
+drone-insurgency feature (Reuters, 25 Nov). All verified 25-Nov but
+held for v3 — the ALSO ON list fits 33 items at 11 rows; v3 will need
+a 4-column restructure or swaps to go past 46.

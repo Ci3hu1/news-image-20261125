@@ -70,3 +70,19 @@ A solid v1 that should clear the gate and score in the dev heat on
 breadth + date honesty + legibility. Iterate on the live score and
 the judge's hidden reasons: add daytime stories in v2, fix whatever
 the judge penalises, keep whatever it praises.
+
+## v2 — daytime edition (25 Nov ~18:15 WIB)
+
+- 41 → 46 stories: German GDP, Houthis refinery claim, China Politburo
+  probe, Puigdemont return, Asian stocks slide. All verified from
+  primary sources (Destatis / Reuters) as first reported Wed 25 Nov.
+- US PCE/GDP actuals NOT in v2: BEA releases 20:30 WIB, after this
+  build — v3 material, with the Hera reveal (19:45 CET) and evening
+  wires.
+- Layout: ALSO ON 3 cols x 11 rows (pitch 12px) — the most the list
+  holds without a 4-column restructure; 46 is the floor of the 46–52
+  icantcodefyi recipe and above the 43-story top-10 floor. Legibility
+  kept: clearance 0, masthead + 3 leads + KPIs read at 300px.
+- Kept from v1: DATE CHECK (2 items, neutral), 7 regions, UTC timeline
+  (AFTERNOON slot now German GDP), Sooryavanshi detail, KPIs, daylight
+  wire-desk art.
