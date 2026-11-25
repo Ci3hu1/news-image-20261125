@@ -52,3 +52,63 @@
   GDP, US PCE/GDP, US markets, evening wires, Hera close-ups) before
   entries close 27 Nov 07:00 WIB. Read the judge's hidden reasons
   after the live score before building v2.
+
+## Bundle + check — 25 Nov 2026 ~09:02–09:03 WIB (subagent e6da46a7)
+- Kit: fresh download for this bounty (skill guide 1.5.285).
+- Bundle --dry-run first: 18 session files found; 13 pre-opening
+  (23 Nov) sessions auto-excluded by the kit (thinking_in_window).
+- Bundle failed twice before succeeding: (1) --parent-session rejected
+  — the parent session is already carried as evidence, never pass it
+  as parent; (2) run record incomplete — fixed with --prompt-file
+  ~/workspace/tools/makefun/ni25-prompt.txt (cron job body verbatim,
+  the schedule's configured prompt), --prompt-origin scheduled,
+  --prompt-via "cron makefun-cek-bounty-baru-rutin (30-minute
+  make.fun bounty check)", --mcp none, --harness muse-app
+  --harness-version 1 --provider ipnext --model
+  ipnext/avocado-5.17-v2 (model id from agent.agents, not renamed).
+- Usage: muse.db SELECT on agent_message_token_usage returned 1 row
+  (parent agent 9de7d04e, message b4db4330, 909,270 in / 14,580 out,
+  model ipnext/avocado-5.17-v2) → ~/.makefun/muse-usage-ni25.jsonl.
+  Builder subagent's own row is written only when its run completes,
+  so it is NOT in this bundle — the kit's own warning says the
+  top-level agent must re-run the SELECT (parent + subagent ids) and
+  re-bundle before submitting, to attach the builder's row.
+- Bundle: ~/workspace/tools/makefun/bundles/ni25-bundle.tar.gz
+  (1,280,792 bytes, sha256
+  4dd7079e4815ac7a898c650a0caf8a422b386ed40ea8aeaa0291cdaa90d42b2b),
+  18 sessions.
+- Kit check: ok — 13 passed, 0 failed, 6 skipped, 5 checked at
+  submission. thinking_in_window PASS, thinking_reproduces PASS
+  (46.6% authored), thinking_priced PASS (1 usage record),
+  transcripts_run_record PASS. thinking_own_work SKIP (note only):
+  sessions fetched another entry's status route
+  (make.fun/api/submissions/01a20c43-…/status) — reference only,
+  never a rejection.
+- At-submission checks (site's, not check's): repo_public,
+  repo_owner (.makefun/owner.json or submit from the GitHub-owner
+  account), repo_created_after_open, commit_in_repo,
+  duplicate_snapshot. Repo is public, commit 977b2e55 pushed.
+- Commit 977b2e55b00e1ba1ebd68518794330ac1b0b6e14. READY for Joni's
+  'Setuju'. Do NOT submit.
+
+## Submission — 25 Nov 2026 ~10:20 WIB (on Joni's "Setuju, submit NI25 v1" 10:09 WIB)
+- Joni approved the exact entry (commit 977b2e55) at 10:09 WIB.
+- Re-bundle before submit: usage file gained the builder's row
+  (e6da46a7, message 4f396aa0, 13,944,175 in / 68,235 out) + a second
+  parent row (427e247e); 3 rows total, all attached.
+- First re-bundle (ni25-bundle-v2.tar.gz, discovery) FAILED kit check
+  on thinking_in_window: discovery pulled in 24 sessions incl. the
+  main-agent session 2d7fced3 with 100 pre-open timestamps. Fix:
+  re-bundled with --no-discover + the exact 18 sessions from the v1
+  bundle → ni25-bundle-v3.tar.gz (973,801 bytes, sha256
+  5162a7801aeb6ca11d58339a51ea38d6444f300cb4dc735af89460b697f8af2b),
+  kit check ok=true, failed=[] (13 pass, in_window PASS,
+  reproduces 46.6%, priced 3 records).
+- Submission: 01a210b7-89ad-7631-a2b8-b5199fc221a0, stage submitting at
+  submit (round 1), title "Daylight wire desk — 41 stories from
+  25 November 2026". Live status right after submit: preparing, no
+  scores yet (blind rounds — no live score until results).
+- Claim code saved to ~/.config/makefun/news-image-20261125-submission.json (0600).
+- Live score/rank: none yet (blind rounds). Next: v2 later in the day
+  with daytime stories; read judge's hidden reasons after the live
+  score before building v2.
