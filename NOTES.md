@@ -112,3 +112,102 @@
 - Live score/rank: none yet (blind rounds). Next: v2 later in the day
   with daytime stories; read judge's hidden reasons after the live
   score before building v2.
+
+## v2 — daytime edition, 46 stories — 25 Nov 2026 ~18:15–18:45 WIB (subagent 348d6d8a)
+
+- 41 → 46 stories. All 41 v1 stories kept unchanged. Five daytime stories
+  added, each first reported Wed 25 Nov 2026, verified from a primary
+  source read on the outlet's own page:
+  - 42. EUROPE/Berlin — "German GDP +0.1%, revised down" — Destatis
+    press release No. 409 of 25 Nov 2026 (Q3 +0.1% q/q, +1.2% y/y,
+    revised down 0.1pp from the 30 Oct first release). [URL-25]
+  - 43. MIDDLE EAST/Ras Tanura — "Houthis claim refinery, Riyadh
+    strikes" — Reuters 25 Nov (Houthi spokesman said Wednesday the
+    group attacked Ras Tanura refinery + Riyadh financial district;
+    coalition intercepted 4 drones in Ras Tanura earlier Wednesday).
+    [URL-25]
+  - 44. ASIA/Beijing — "China probes Politburo member Chen Jining" —
+    Reuters 25 Nov (anti-graft probe of Shanghai party chief, 4th
+    Politburo inquiry since 2025). [URL-25]
+  - 45. EUROPE/Barcelona — "Puigdemont to return to Spain on Dec 12" —
+    Reuters 25 Nov (said Wednesday, ending nearly a decade of exile
+    after the amnesty applied). [URL-25]
+  - 46. GLOBAL/Seoul — "Asian stocks slide on tariff threats" — Reuters
+    25 Nov (MSCI Asia-Pacific ex-Japan -2.3%, Korea -5.3%, Taiwan
+    -5.1%, Nikkei -2.9%, S&P futures -0.3%). [URL-25]
+- Region counts v2: EUROPE 5 · MIDDLE EAST 11 · ASIA 11 · AFRICA 2 ·
+  AMERICAS 3 · OCEANIA 10 · GLOBAL 4 = 46.
+- Layout: ALSO ON list 3 cols x 11 rows (was 10), pitch 13 → 12px;
+  masthead 41 → 46; map dots 14–46; timeline AFTERNOON slot now
+  "German GDP +0.1%" (Sensex stays story 15). KPIs, DATE CHECK (2
+  items, unchanged), heroes, featured unchanged. German GDP poster line
+  shortened to "German GDP +0.1%, revised down — Destatis" (full
+  "revised down from 0.2%" measured 336.8px > 325px column).
+- Render: entry.png 325,805 bytes, sha256
+  6abf4403843052a490e6308dc8a0d3b38549349f35ad2a4a1241305a149442ec,
+  byte-deterministic across renders, clearance violations 0, tests 6/6
+  pass. Visual check: masthead + 3 hero leads + KPI strip read at
+  300px; ALSO ON items 42–46 complete with sources, no truncation.
+- Competition/quota re-checked 25 Nov ~18:15 WIB: acceptingSubmissions
+  true, can_submit true, day cap 6 (taken 1, left 5), hard limit left
+  39, entry_fee null, field 6,504 entries (was 2,512 at v1 submit).
+- Deliberately left out (for v3): US PCE + Q3 GDP second estimate (BEA
+  8:30 AM ET = 20:30 WIB, not yet released at build time); ESA Hera
+  Dimorphos reveal (19:45 CET, not yet happened); Ramaphosa Farmgate
+  win, Wipro–BP deal, Spain election debate, Jordan death sentence,
+  Thanksgiving travel, Sahel drones feature (all Reuters 25 Nov,
+  verified but held — ALSO ON fits 33 items at 11 rows; v3 needs a
+  4-column restructure or swaps to go past 46).
+- Commit 829462f3c93ca8bb4540324f45b20c91ae75de26 "news-image-20261125
+  v2: 46 sourced stories, daytime edition" (5 files: entry.png,
+  preview-300.png, render_poster.py, BRIEF.md, STRATEGY.md).
+  **PUSH BLOCKED in this session: the proactivity session's egress
+  policy denies GitHub POSTs (policy_denied
+  proactivity_read_only_preparation, hitl_domain_allow_github_com) —
+  git push/fetch and the Git Data API all refused; remote verified via
+  API still at 007db80. The parent (main agent) session must push
+  829462f + the docs commit below.**
+- Fresh kit downloaded 25 Nov ~18:26 WIB: ni25-kit-v2.tar.gz
+  (8,475,457 bytes), harness@c62b0ab7… / scorer@26f98e34… (v1 kit was
+  harness@9cb66b22… / scorer@a1a1fe4a…).
+- Kit check (fresh kit, commit 829462f, 19 sessions + makefun-run.json,
+  25 Nov ~18:30 WIB): ok=false, failed=[thinking_priced,
+  transcripts_run_record]. PASSES (entry proven sound):
+  competition_open, snapshot (10 files, 507,524 bytes, within caps),
+  license_osi (MIT), entrypoint (main.py, python3.13),
+  transcripts_present/recorded (19 sessions), thinking_wellformed,
+  thinking_in_window (all 554 timestamps in window),
+  thinking_reproduces 50.2% authored (548/1090 lines; render_poster.py
+  final content from 3 write/edit messages), thinking_turns (291),
+  thinking_revised. Skips: strategy_note, committed_secret,
+  thinking_committed, thinking_on_task, thinking_fresh,
+  thinking_own_work. Submission-phase checks (repo_public, repo_owner,
+  repo_created_after_open, commit_in_repo, duplicate_snapshot) resolve
+  at submit once 829462f is pushed.
+  - thinking_priced FAILS: loose transcripts carry 0 usage rows (Muse
+    keeps usage in its DB, not the session file). The kit's own fix
+    says a subagent cannot do this step: the top-level agent must run
+    the muse.db SELECT with every session's agent_id and re-bundle
+    with --muse-usage (v1 usage file ~/.makefun/muse-usage-ni25.jsonl
+    has 3 rows; the v2 builder's row is written only when this run
+    completes).
+  - transcripts_run_record FAILS: the run record is present
+    (makefun-run.json, prompt handed-off, parent chat 1f628cec listed)
+    but the check cannot complete the parent chain from the subagent's
+    session files — the Muse app session records no parent_session_id,
+    and the tool resolves the chain from the top-level agent's session
+    (which holds the spawn). The tool's own message: "run bundle from
+    that top-level agent." The parent must re-bundle at submit time
+    (same flow as v1). Bundle attempts in this session: dry-run with
+    --no-discover + 18 v1 sessions + builder session + --parent-session
+    1f628cec + --effort default — refused on missing parents; the
+    373 MB main-chat session file exceeds the 128 MB per-session cap
+    and is NOT the spawning session (the spawner is 1f628cec, 514 KB).
+- Prompt file for this build: ~/workspace/tools/makefun/ni25-v2-prompt.txt
+  (task verbatim). Fresh kit dir:
+  ~/workspace/tools/makefun/news-image-20261125-kit-v2/.
+  Check transcripts dir: /tmp/ni25-v2-transcripts/ (19 sessions +
+  makefun-run.json + system_prompt.md + AGENTS.md +
+  parent-chats/requester/1/muse-app/1f628cec….jsonl).
+- READY for Joni's 'Setuju' on the entry itself (commit 829462f,
+  46 stories). Do NOT submit until the parent pushes + re-bundles.
